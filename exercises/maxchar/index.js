@@ -8,16 +8,55 @@
 function maxChar(str) {
     let numOfTimesChar = {};
     for (let char1 of str){
+      
+          
+        if (char1 in numOfTimesChar){
+                    continue;
+                }
+        
+        
         for (let char2 of str) {
-            if (char1 == char2) {
-                numberOfTimes[char1]++;
+            
+            
+        
+            if (char1 === char2) {
+            
+                
+                if (numOfTimesChar[char1]){
+                    numOfTimesChar[char1] += 1;
+                }
+                else {
+                    numOfTimesChar[char1] = 1;
+                }
             }
         }
     }
-    for (let i in numberOfTimes) {
-        
+    
+    /*
+    for (let char in numberOfTimes) { 
+        if numberOfTimes[char] > 
     }
     
+    */
+//    debugger;
+    
+/*
+let arr = Object.values(numOfTimesChar);
+//let min = Math.min(...arr);
+let max = Math.max(...arr);
+
+//console.log( `Min value: ${min}, max value: ${max}` );
+    
+return max;
+*/
+    
+//console.log(numOfTimesChar);
+    return Object.keys(numOfTimesChar).reduce((a, b) => (numOfTimesChar[a] > numOfTimesChar[b]) ? a : b);
+   
+    
+    
 }
+
+//console.log(maxChar("abbbaabbccccccccc"));
 
 module.exports = maxChar;
