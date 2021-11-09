@@ -10,60 +10,60 @@
 
 function anagrams(stringA, stringB) {
   const capChars = [
-    A,
-    B,
-    C,
-    D,
-    E,
-    F,
-    G,
-    H,
-    I,
-    J,
-    K,
-    L,
-    M,
-    N,
-    O,
-    P,
-    Q,
-    R,
-    S,
-    T,
-    U,
-    V,
-    W,
-    X,
-    Y,
-    Z,
+    "A",
+    "B",
+    "C",
+    "D",
+    "E",
+    "F",
+    "G",
+    "H",
+    "I",
+    "J",
+    "K",
+    "L",
+    "M",
+    "N",
+    "O",
+    "P",
+    "Q",
+    "R",
+    "S",
+    "T",
+    "U",
+    "V",
+    "W",
+    "X",
+    "Y",
+    "Z",
   ];
   const smallChars = [
-    a,
-    b,
-    c,
-    d,
-    e,
-    f,
-    g,
-    h,
-    i,
-    j,
-    k,
-    l,
-    m,
-    n,
-    o,
-    p,
-    q,
-    r,
-    s,
-    t,
-    u,
-    v,
-    w,
-    x,
-    y,
-    z,
+    "a",
+    "b",
+    "c",
+    "d",
+    "e",
+    "f",
+    "g",
+    "h",
+    "i",
+    "j",
+    "k",
+    "l",
+    "m",
+    "n",
+    "o",
+    "p",
+    "q",
+    "r",
+    "s",
+    "t",
+    "u",
+    "v",
+    "w",
+    "x",
+    "y",
+    "z",
   ];
   let charMapA = {};
   let charMapB = {};
@@ -71,9 +71,9 @@ function anagrams(stringA, stringB) {
   for (let element of stringA) {
     if (element in capChars || element in smallChars) {
       if (element in charMap.keys) {
-        i++;
+        charMapA[element] += 1;
       } else {
-        charMapA[element] = i;
+        charMapA[element] = 1;
       }
     }
   }
@@ -82,9 +82,9 @@ function anagrams(stringA, stringB) {
   for (let element of stringB) {
     if (element in capChars || element in smallChars) {
       if (element in charMap.keys) {
-        i++;
+        charMapB[element] += 1;
       } else {
-        charMapB[element] = i;
+        charMapB[element] = 1;
       }
     }
   }
@@ -92,4 +92,5 @@ function anagrams(stringA, stringB) {
   console.log(charMapB);
 }
 
-module.exports = anagrams;
+anagrams("rail safety", "fairy tales");
+// module.exports = anagrams;
