@@ -151,8 +151,8 @@ function anagrams(stringA, stringB) {
   // }
   // return true;
 
-  const keys1 = charMapA.keys(charMapA);
-  const keys2 = charMapB.keys(charMapB);
+  const keys1 = Object.keys(charMapA);
+  const keys2 = Object.keys(charMapB);
   if (keys1.length !== keys2.length) {
     return false;
   }
