@@ -139,10 +139,30 @@ function anagrams(stringA, stringB) {
 
   console.log(charMapB);
 
-  for (let element in charMapA) {
-    for (let element in charMapB) {
+  // const keys1 = Object.keys(object1);
+  // const keys2 = Object.keys(object2);
+  // if (keys1.length !== keys2.length) {
+  //   return false;
+  // }
+  // for (let key of keys1) {
+  //   if (object1[key] !== object2[key]) {
+  //     return false;
+  //   }
+  // }
+  // return true;
+
+  const keys1 = CharMapA.keys(CharMapA);
+  const keys2 = CharMapB.keys(CharMapB);
+  if (keys1.length !== keys2.length) {
+    return false;
+  }
+  for (let key of keys1) {
+    if (CharMapA[key] !== CharMapA[key]) {
+      return false;
     }
   }
+  return true;
+
   // return charMapB == charMapA;
 }
 
