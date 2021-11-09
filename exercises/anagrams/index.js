@@ -99,24 +99,37 @@ function anagrams(stringA, stringB) {
   //     }
   //   }
   // }
-  console.log(charMapA);
-  console.log(charMapB);
+  // console.log(charMapA);
+  // console.log(charMapB);
+
+  // for (let element in charMapA) {
+  //   if (capChars.indexOf(element) > -1) {
+  //     if (!(smallChars.indexOf(capChars.indexOf(element)) > -1)) {
+  //       charMapA[smallChars[capChars.indexOf(element)]] = 0;
+  //     }else {
+  //     charMapA[smallChars[capChars.indexOf(element)]] += charMapA[element];
+  //     delete charMapA[element];
+  //     }
+  //   }
+  // }
 
   for (let element in charMapA) {
     if (capChars.indexOf(element) > -1) {
-      if (!(smallChars.indexOf(capChars.indexOf(element)) > -1)) {
-        charMapA[smallChars[capChars.indexOf(element)]] = 0;
+      if (!charMapA.hasOwnProperty(smallChars[capChars.indexOf(element)])) {
+        charMapA[smallChars[capChars.indexOf(element)]] = charMapA[element];
+      } else {
+        charMapA[smallChars[capChars.indexOf(element)]] += charMapA[element];
+        delete charMapA[element];
       }
-      charMapA[smallChars[capChars.indexOf(element)]] += charMapA[element];
-      delete charMapA[element];
     }
   }
-  console.log(charMapA);
+  // console.log(charMapA);
 
   for (let element in charMapB) {
     if (capChars.indexOf(element) > -1) {
-      if (!(smallChars.indexOf(capChars.indexOf(element)) > -1)) {
-        charMapA[smallChars[capChars.indexOf(element)]] = 0;
+      //obj.hasOwnProperty(prop)
+      if (!charMapB.hasOwnProperty(smallChars[capChars.indexOf(element)])) {
+        charMapB[smallChars[capChars.indexOf(element)]] = 0;
       }
       charMapB[smallChars[capChars.indexOf(element)]] += charMapB[element];
       delete charMapB[element];
@@ -126,8 +139,12 @@ function anagrams(stringA, stringB) {
 
   console.log(charMapB);
 
-  return charMapB == charMapA;
+  for (let element in charMapA) {
+    for (let element in charMapB) {
+    }
+  }
+  // return charMapB == charMapA;
 }
 
-anagrams("rail safety", "fairy Tales");
+console.log(anagrams("rail safety", "fairy Tales"));
 module.exports = anagrams;
