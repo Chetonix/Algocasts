@@ -25,6 +25,7 @@ function chunk(array, size) {
 
   for (let element of array) {
     const last = chunked[chunked.length - 1];
+    //console.log(last);
 
     if (!last || last.length === size) {
       chunked.push([element]);
@@ -38,4 +39,4 @@ function chunk(array, size) {
 
 module.exports = chunk;
 
-//console.log(chunk([1, 2, 3, 4], 3));
+console.log(chunk([1, 2, 3, 4], 3));
