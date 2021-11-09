@@ -93,8 +93,17 @@ function anagrams(stringA, stringB) {
     }
   }
 
-  return charMapB == charMapB;
+  //   for (let element of charMapA.keys) {
+  //     for (let element of charMapB.keys) {
+  //     if smallChars.indexOf(element) == capChars.indexOf(element) {
+  //       charMapA[element]
+  //     }
+  //   }
+  // }
+  console.log(charMapB);
+
+  return charMapB == charMapA;
 }
 
-//anagrams("rail safety", "fairy Tales");
+anagrams("rail safety", "fairy Tales");
 module.exports = anagrams;
