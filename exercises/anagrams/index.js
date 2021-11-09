@@ -99,21 +99,24 @@ function anagrams(stringA, stringB) {
   //     }
   //   }
   // }
+  console.log(charMapA);
+  console.log(charMapB);
 
   for (let element in charMapA) {
     if (element in capChars) {
-      charMapA[smallChars[capChars.indexOf(element)]] = charMapA[element];
-      delete chatMapA[element];
+      charMapA[smallChars[element]] += charMapA[capChars[element]];
+      delete charMapA[capChars[element]];
     }
   }
   console.log(charMapA);
 
   for (let element in charMapB) {
     if (element in capChars) {
-      charMapB[smallChars[capChars.indexOf(element)]] = charMapB[element];
-      delete chatMapB[element];
+      charMapB[smallChars[element]] += charMapB[capChars[element]];
+      delete charMapB[capChars[element]];
     }
   }
+  console.log(charMapA);
 
   console.log(charMapB);
 
