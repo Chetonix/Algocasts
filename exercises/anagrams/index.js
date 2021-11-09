@@ -80,7 +80,6 @@ function anagrams(stringA, stringB) {
       }
     }
   }
-  console.log(charMapA);
 
   for (let element of stringB) {
     //if (element in capChars || element in smallChars) {
@@ -100,6 +99,22 @@ function anagrams(stringA, stringB) {
   //     }
   //   }
   // }
+
+  for (let element in charMapA) {
+    if (element in capChars) {
+      charMapA[smallChars[capChars.indexOf(element)]] = charMapA[element];
+      delete chatMapA[element];
+    }
+  }
+  console.log(charMapA);
+
+  for (let element in charMapB) {
+    if (element in capChars) {
+      charMapB[smallChars[capChars.indexOf(element)]] = charMapB[element];
+      delete chatMapB[element];
+    }
+  }
+
   console.log(charMapB);
 
   return charMapB == charMapA;
