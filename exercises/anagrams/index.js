@@ -103,9 +103,8 @@ function anagrams(stringA, stringB) {
   console.log(charMapB);
 
   for (let element in charMapA) {
-    console.log(element);
     if (capChars.indexOf(element) > -1) {
-      if (!(smallChars.indexOf(element) > -1)) {
+      if (!(smallChars.indexOf(capChars.indexOf(element)) > -1)) {
         charMapA[smallChars[capChars.indexOf(element)]] = 0;
       }
       charMapA[smallChars[capChars.indexOf(element)]] += charMapA[element];
@@ -115,8 +114,10 @@ function anagrams(stringA, stringB) {
   console.log(charMapA);
 
   for (let element in charMapB) {
-    console.log(element);
     if (capChars.indexOf(element) > -1) {
+      if (!(smallChars.indexOf(capChars.indexOf(element)) > -1)) {
+        charMapA[smallChars[capChars.indexOf(element)]] = 0;
+      }
       charMapB[smallChars[capChars.indexOf(element)]] += charMapB[element];
       delete charMapB[element];
     }
