@@ -151,13 +151,13 @@ function anagrams(stringA, stringB) {
   // }
   // return true;
 
-  const keys1 = CharMapA.keys(CharMapA);
-  const keys2 = CharMapB.keys(CharMapB);
+  const keys1 = charMapA.keys(charMapA);
+  const keys2 = charMapB.keys(charMapB);
   if (keys1.length !== keys2.length) {
     return false;
   }
   for (let key of keys1) {
-    if (CharMapA[key] !== CharMapA[key]) {
+    if (charMapA[key] !== charMapB[key]) {
       return false;
     }
   }
