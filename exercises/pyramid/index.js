@@ -12,8 +12,29 @@
 //   pyramid(3)
 //       '  #  '
 //       ' ### '
-//       '#####'
+//       '#####' 
 
-function pyramid(n) {}
+function pyramid(n) {
+
+    let m = n-1;
+    for (let i = 1; i <= n ; i++ ) {
+        
+        
+        let str = "";
+        for (let j = 1; j <= m; j++) {
+            str += " ";
+        }
+        for (let l = 1; l <= i*2-1; l++) {
+            str += "#";
+        }
+        for (let k = m ; k > 0 ; k--) {
+        str += " ";
+    }
+    m--;
+    console.log(str);
+    }
+    
+}
+
 
 module.exports = pyramid;
