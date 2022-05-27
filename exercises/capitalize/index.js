@@ -19,6 +19,5 @@ function capitalize(str) {
 
 }
 
-capitalize("I am a legend.");
 
 module.exports = capitalize;
