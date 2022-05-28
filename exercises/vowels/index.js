@@ -7,6 +7,20 @@
 //   vowels('Why do you ask?') --> 4
 //   vowels('Why?') --> 0
 
-function vowels(str) {}
+function vowels(str) {
+    let count = 0;
+    const vowels = "aeiouAEIOU".split("");
+    console.log(vowels);
+    for (let char of str) {
+        
+        if (vowels.includes(char)) {
+            count += 1;
+        }
+        
+    }
+    return count;
+}
+
+// console.log(vowels("Aeiou"));
 
 module.exports = vowels;
