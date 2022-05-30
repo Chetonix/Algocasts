@@ -32,6 +32,8 @@ class Queue {
 
         const record = this.myQueue2.pop();
 
+        // this.myQueue1.push(record);
+
         while(this.myQueue2.peek()) {
             this.myQueue1.push(this.myQueue2.pop());
         }
