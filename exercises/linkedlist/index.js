@@ -93,6 +93,19 @@ class LinkedList {
 
         nodeRef.next = new Node(data);
     }
+
+    getAt(index) {
+        let nodeRef = this.head;
+        for (let i=0; i<=index-1; i++) {
+            if (nodeRef === null) {
+                return null;
+            }
+            nodeRef = nodeRef.next;
+        }
+        return nodeRef;
+    }
 }
+
+
 
 module.exports = { Node, LinkedList };
