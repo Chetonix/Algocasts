@@ -147,6 +147,17 @@ class LinkedList {
         this.getAt(index - 1).next = new Node(data);
         this.getAt(index).next = node;
     }
+
+    forEach(fn) {
+        let nodeRef = this.head;
+        let index = 0;
+        while(nodeRef) {
+            fn(nodeRef, index);
+            nodeRef = nodeRef.next;
+            index++;
+        }
+
+    }
 }
 
 
