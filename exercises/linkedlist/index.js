@@ -25,7 +25,7 @@ class LinkedList {
             count++;
             nodeRef = nodeRef.next;
         }
-        return count;
+        return count; 
     }
 
     getLast () {
@@ -76,6 +76,22 @@ class LinkedList {
         prevNodeRef.next = null;
         
         
+    }
+
+    insertLast(data) {
+
+        let nodeRef = this.head;
+
+        if (!this.head) {
+            this.head = new Node(data);
+            return;
+        }
+
+        while(nodeRef.next) {
+            nodeRef = nodeRef.next;
+        }
+
+        nodeRef.next = new Node(data);
     }
 }
 
