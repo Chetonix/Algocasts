@@ -104,6 +104,19 @@ class LinkedList {
         }
         return nodeRef;
     }
+
+    removeAt(index) {
+        // if (this.getAt(index+2) === null) {
+        //     return;
+        // }
+        if (!this.getAt(index)){
+            return;
+        }
+        if (index === 0) {
+            this.head = this.head.next;
+        }
+        this.getAt(index-1).next = this.getAt(index+1);
+    }
 }
 
 
