@@ -52,9 +52,17 @@ class Tree {
         }
     }
 
-    // traverseDF(fn) {
-    //     fn(root);
-    // }
+    traverseDF(fn) {
+        let nodeArray = [this.root];
+
+        while(nodeArray.length) {
+            let node = nodeArray[0];
+            nodeArray.shift();
+            nodeArray.unshift(...node.children);
+            
+            fn(node);
+        }
+    }
 }
 
 module.exports = { Tree, Node };
