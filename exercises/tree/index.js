@@ -11,9 +11,9 @@
 // function that gets called with each element in the tree
 
 class Node {
-    constructor(data, children = []) {
+    constructor(data) {
         this.data = data;
-        this.children = children;
+        this.children = [];s
     }
 
     add(data) {
