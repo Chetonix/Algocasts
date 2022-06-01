@@ -13,7 +13,7 @@
 class Node {
     constructor(data) {
         this.data = data;
-        this.children = [];s
+        this.children = [];
     }
 
     add(data) {
@@ -35,12 +35,26 @@ class Tree {
     }
 
     traverseBF(fn) {
-        fn(root);
+        let nodeArray = [this.root];
+        
+        while(nodeArray.length) {
+            // let item = nodeArray.data;
+            // let itemChildren = [...nodeArray[0].children]
+            // // nodeArray.push(nodeArray[0].children);
+            // // fn(nodeArray.shift().data);
+            // nodeArray.push(itemChildren);
+            // nodeArray.shift(nodeArray[0]);
+            // fn(item);
+        let node = nodeArray[0];
+        nodeArray.push(...node.children);
+        nodeArray.shift();
+        fn(node);
+        }
     }
 
-    traverseDF(fn) {
-        fn(root);
-    }
+    // traverseDF(fn) {
+    //     fn(root);
+    // }
 }
 
 module.exports = { Tree, Node };
