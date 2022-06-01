@@ -14,11 +14,16 @@
 function fromLast(list, n) {
     let slow = list.getFirst();
     let fast = list.getFirst();
-    
-    while(fast.next.next) {
+    let isIterate = false;
+
+    while(fast.next) {
         slow = slow.next;
-        for (let i = 0; i<n; i++) {
+        if (isIterate) {
             fast = fast.next;
+        }
+        for (let i = 0; i<=n; i++) {
+            fast = fast.next;
+            isIterate = true;
         }
     }
     return slow;
