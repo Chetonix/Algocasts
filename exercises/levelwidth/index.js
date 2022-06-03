@@ -22,13 +22,13 @@ function levelWidth(root) {
     while (childrenArray.length) {
         
         baseArray = [...childrenArray];
-        console.log("baseArray", baseArray);
+        // console.log("baseArray", baseArray);
         childrenArray = [];
         counts.push(baseArray.length);
         while(baseArray.length) {
             let removedNode = baseArray.pop();
-            console.log("removedNode:",removedNode);
-            console.log("removedNode children: ", removedNode.children);
+            // console.log("removedNode:",removedNode);
+            // console.log("removedNode children: ", removedNode.children);
             
                 if (removedNode.children === undefined) {
                     break;
@@ -37,8 +37,8 @@ function levelWidth(root) {
                 if (removedNode.children.length) {
                     childrenArray.push(...removedNode.children);
                 }
-            console.log("baseArray: ", baseArray);
-            console.log("childrenArray: ", childrenArray);
+            // console.log("baseArray: ", baseArray);
+            // console.log("childrenArray: ", childrenArray);
             
         }
         
